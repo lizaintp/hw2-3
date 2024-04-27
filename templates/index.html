@@ -120,7 +120,7 @@
                                 <p class="text-uppercase ls-2 fw-bold color">- Биография</p>
                                 <h2 class="display-2 fw-bolder text-uppercase ls-2">{{portfolio.bio}}</h2>
                                 <blockquote class="fs-6 border-color">
-                                    <p>"{{portfolio.review}}"</p>
+                                    <p>"{{portfolio.review}}"</p><br>
                                     <footer class="blockquote-footer font-monospace mb-0">{{portfolio.subreview}}
                                     </footer>
                                 </blockquote>
@@ -137,7 +137,7 @@
                                         <h3 class="border-bottom border-color border-width-3 d-inline-block">Академическая должность
                                             </h3>
                                         <div class="row feature-box-border-vertical col-mb-50 justify-content-center align-items-center">
-                                            {% for academicpositions in academicpositions%}
+                                            {% for academicpositions in academicpositions %}
                                             <div class="col-12 feature-box fbox-active fbox-dark fbox-sm">
                                                 <div class="fbox-icon">
                                                     <i class="fa-solid fa-check"></i>
@@ -468,8 +468,7 @@
 
             <div id="copyrights" class="bg-color">
                 <div class="container">
-                    <p class="mb-0 text-center text-dark text-opacity-75">Copyrights &copy; 2023 All Rights Reserved by
-                        Canvas Inc.</p>
+                    <p class="mb-0 text-center text-dark text-opacity-75">By &copy; OneCode</p>
                 </div>
             </div>
         </footer>
