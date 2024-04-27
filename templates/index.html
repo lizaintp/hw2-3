@@ -171,22 +171,11 @@
                                     <div class="col-md-3">
                                         <h2><i class="bi-award"></i> <span
                                                 class="border-bottom border-color border-width-3 d-inline-block nocolor">
-                                                Rewards</span></h2>
+                                                Прогресс</span></h2>
                                     </div>
                                     <div class="col-md-9">
-                                        <div class="toggle mb-0" data-state="open">
-                                            <div class="toggle-header align-items-center">
-                                                <div class="toggle-title fs-4">
-                                                    {{rewards.title}}
-                                                </div>
-                                                <h3 class="mb-0 font-body me-3">{{rewards.year}}</h3>
-                                                <div class="toggle-icon fs-4">
-                                                    <i class="toggle-closed bi-plus"></i>
-                                                    <i class="toggle-open bi-dash color"></i>
-                                                </div>
-                                            </div>
-                                            <div class="toggle-content">{{rewards.subtitle}}</div>
-                                        </div>
+                                        
+                                        {%for rewards in rewards%}
                                         <div class="divider my-4"></div>
                                         <div class="toggle mb-0">
                                             <div class="toggle-header align-items-center">
@@ -201,33 +190,12 @@
                                             </div>
                                             <div class="toggle-content">{{rewards.subtitle}}</div>
                                         </div>
-                                        <div class="divider my-4"></div>
-                                        <div class="toggle mb-0">
-                                            <div class="toggle-header align-items-center">
+                                        {% endfor %}
                                                 <div class="toggle-title fs-4">
-                                                    {{rewards.title}}
-                                                </div>
-                                                <h3 class="mb-0 font-body me-3">{{rewards.year}}</h3>
-                                                <div class="toggle-icon fs-4">
-                                                    <i class="toggle-closed bi-plus"></i>
-                                                    <i class="toggle-open bi-dash color"></i>
+                                               
                                                 </div>
                                             </div>
-                                            <div class="toggle-content">{{rewards.subtitle}}</div>
-                                        </div>
-                                        <div class="divider my-4"></div>
-                                        <div class="toggle mb-0">
-                                            <div class="toggle-header align-items-center">
-                                                <div class="toggle-title fs-4">
-                                                    {{rewards.title}}
-                                                </div>
-                                                <h3 class="mb-0 font-body me-3">{{rewards.year}}</h3>
-                                                <div class="toggle-icon fs-4">
-                                                    <i class="toggle-closed bi-plus"></i>
-                                                    <i class="toggle-open bi-dash color"></i>
-                                                </div>
-                                            </div>
-                                            <div class="toggle-content">{{rewards.subtitle}}</div>
+                                            <div class="toggle-content"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -239,61 +207,24 @@
 
                 <div id="section-works" class="py-lg-5 page-section">
                     <div class="container mw-md">
-                        <h2 class="text-center display-3 fw-semibold ls-2 mb-5"><i class="bi-briefcase color"></i> Works
+                        <h2 class="text-center display-3 fw-semibold ls-2 mb-5"><i class="bi-briefcase color"></i> Работы
                         </h2>
                         <div class="row gy-5">
                             <div class="col-12">
                                 <div class="row g-4 gx-5 align-items-center">
-                                    <div class="col-md-6">
-                                        <img src="{% static 'demos/academic/images/works/1.jpg' %}" alt=".." class="rounded-2">
+                                    {% for works in works %}
+                                    <div class="col-md-5">
+                                        <img src="{{works.image_of_college.url}}" alt=".." class="rounded-2">
                                     </div>
                                     <div class="col-md-6">
-                                        <h3 class="mb-2">Education of One.</h3>
-                                        <p><span class="op-07">Published on:</span> <span class="fw-bold color">05th
-                                                Jan, 2022</span></p>
-                                        <p>Authoritatively deliver user friendly value for covalent niches. Efficiently
-                                            provide access to high-quality growth strategies after efficient e-services.
-                                            Distinctively re-engineer premier expertise before open-source innovation.
-                                            Phosfluorescently.</p>
+                                        <h3 class="mb-2">{{works.name_of_job}}</h3>
+                                        <p><span class="op-07">{{works.publication}}</span></p>
+                                        <p>{{works.description_of_college}}</p>
                                         <a href="#"
                                             class="bi-box-arrow-up-right button button-border border-contrast-300 m-0 px-3 rounded py-2 color h-text-light"></a>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row g-4 gx-5 align-items-center">
-                                    <div class="col-md-6">
-                                        <img src="{% static 'demos/academic/images/works/2.jpg' %}" alt=".." class="rounded-2">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h3 class="mb-2">The Psycolodgy of Knowledge.</h3>
-                                        <p><span class="op-07">Published on:</span> <span class="fw-bold color">11th
-                                                Oct, 2021</span></p>
-                                        <p>Intrinsicly cultivate high standards in ROI and out-of-the-box partnerships.
-                                            Intrinsicly conceptualize 24/365 innovation via maintainable models.
-                                            Uniquely provide access to multidisciplinary platforms through orthogonal
-                                            mindshare.</p>
-                                        <a href="#"
-                                            class="bi-box-arrow-up-right button button-border border-contrast-300 m-0 px-3 rounded py-2 color h-text-light"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row g-4 gx-5 align-items-center">
-                                    <div class="col-md-6">
-                                        <img src="{% static 'demos/academic/images/works/3.jpg' %}" alt=".." class="rounded-2">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h3 class="mb-2">How Good You Want to Be.</h3>
-                                        <p><span class="op-07">Published on:</span> <span class="fw-bold color">14th
-                                                Jan, 2019</span></p>
-                                        <p>Enthusiastically predominate stand-alone experiences via vertical
-                                            web-readiness. Distinctively architect superior sources rather than
-                                            plug-and-play resources.</p>
-                                        <a href="#"
-                                            class="bi-box-arrow-up-right button button-border border-contrast-300 m-0 px-3 rounded py-2 color h-text-light"></a>
-                                    </div>
-                                </div>
+                             {% endfor %}
+                                
                             </div>
                         </div>
                     </div>
@@ -303,114 +234,34 @@
                 <div id="section-experience" class="py-lg-5 page-section">
                     <div class="container mw-md">
                         <h2 class="text-center display-3 fw-semibold ls-2 mb-5"><i class="bi-person-gear color"></i>
-                            Experience</h2>
+                            Опыт</h2>
                         <div class="row justify-content-center text-start">
+                            {%for experience in experience%}
                             <div class="col-3">
-                                <p class="mb-2 small">Dec 2022 ─ Present</p>
+                                <p class="mb-2 small">{{experience.data}}</p>
                             </div>
                             <div class="col-9">
-                                <p>The Energistically evolve long-term high-impact growth strategies for orthogonal
-                                    synergy. Holisticly optimize backward-compatible.</p>
+                                <p>{{experience.description}}</p>
                             </div>
                             <div class="clear"></div>
-                            <div class="col-3">
-                                <p class="small">Mar 2021 ─ Dec 2022</p>
-                            </div>
-                            <div class="col-9">
-                                <p>Studies at Distinctively revolutionize vertical processes via competitive
-                                    applications. Synergistically pontificate next-generation technologies.</p>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="col-3">
-                                <p class="small">Feb 2019 ─ Mar 2021</p>
-                            </div>
-                            <div class="col-9">
-                                <p>Progressively drive diverse e-business rather than premier e-tailers. Competently
-                                    provide.</p>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="col-3">
-                                <p class="small">Jan 2017 ─ Feb 2019</p>
-                            </div>
-                            <div class="col-9">
-                                <p class="mb-0">Authoritatively extend covalent diverse expertise and unique human
-                                    capital. Intrinsicly communicate dynamic quality.</p>
-                            </div>
+                            {% endfor %}
                         </div>
                         <div class="divider my-lg-6"></div>
                         <div class="row gx-4 gy-5 experience-features">
+                            {% for aboutyourself in aboutyourself %}
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
                                         <a href="#"><i class="bi-percent"></i></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3>Math Expert</h3>
-                                        <p>Monotonectally impact technically sound alignments before next-generation.
+                                        <h3>{{aboutyourself.title}}</h3>
+                                        <p>{{aboutyourself.subtitle}}
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="feature-box fbox-plain">
-                                    <div class="fbox-icon">
-                                        <a href="#"><i class="bi-clock-history"></i></a>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h3>Longtime Experience</h3>
-                                        <p>Impact technically sound before alignments before next-generation
-                                            architectures.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="feature-box fbox-plain">
-                                    <div class="fbox-icon">
-                                        <a href="#"><i class="bi-balloon-heart"></i></a>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h3>Loyalty</h3>
-                                        <p>Loyal technically sound alignments before next-generation architectures
-                                            impact.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="feature-box fbox-plain">
-                                    <div class="fbox-icon">
-                                        <a href="#"><i class="bi-person-workspace"></i></a>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h3>Hard Worker</h3>
-                                        <p>Monotonectally impact sound alignments before next-generation architectures.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="feature-box fbox-plain">
-                                    <div class="fbox-icon">
-                                        <a href="#"><i class="bi-person-up"></i></a>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h3>Great Leadership</h3>
-                                        <p>Monotonectally impact technically sound alignments before next-generation
-                                            architectures.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="feature-box fbox-plain">
-                                    <div class="fbox-icon">
-                                        <a href="#"><i class="bi-headset"></i></a>
-                                    </div>
-                                    <div class="fbox-content">
-                                        <h3>Good Speakers</h3>
-                                        <p>Monotonectally impact technically sound alignments before next-generation
-                                            architectures.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}    
                         </div>
                     </div>
                 </div>
@@ -419,8 +270,9 @@
                 <div id="section-journal" class="py-lg-5 page-section">
                     <div class="container mw-md">
                         <h2 class="text-center display-3 fw-semibold ls-2 mb-5"><i class="bi-journal-text color"></i>
-                            Journal</h2>
+                            Планы</h2>
                         <div class="row gy-4">
+                            {% for plans in plans %}
                             <div class="col-12">
                                 <div class="card bg-contrast-100 rounded-1 border-0">
                                     <div class="card-body p-4">
@@ -428,13 +280,10 @@
                                             <div class="toggle-header d-block">
                                                 <div class="d-flex w-100">
                                                     <div class="toggle-title fs-4 mb-2">
-                                                        Mollitia arcu consequatur eos
+                                                        {{plans.minetitle}}
                                                     </div>
                                                 </div>
-                                                <div class="small fw-normal mb-2 op-06">Borjan Geshkovski, Cyril
-                                                    Letrouit, Yury Polyanskiy, and Philippe Rigollet (2023)</div>
-                                                <div class="badge bg-warning fs-6 fw-normal mt-2 me-2">Preprint</div>
-                                                <small class="fw-normal"><strong> abcdefg:</strong> 123456</small>
+                                                <div class="small fw-normal mb-2 op-06">{{plans.description}}</div>
                                                 <div class="position-absolute bottom-0 end-0 d-flex align-items-center">
                                                     <a href="#"
                                                         class="bi-info-circle fs-5 text-contrast-900 h-text-color"></a>
@@ -444,126 +293,15 @@
                                             </div>
                                             <div class="toggle-content">
                                                 <div class="mt-4 border-top pt-4">
-                                                    <h4 class="mb-3">Abstract</h4>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-                                                    dolorum, vero ipsum molestiae minima odio quo voluptate illum
-                                                    excepturi quam cum voluptates doloribus quae nisi tempore
-                                                    necessitatibus dolores ducimus enim libero eaque explicabo suscipit
-                                                    animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam,
-                                                    nam unde quas beatae.
+                                                    <h4 class="mb-3">{{plans.title}}</h4>
+                                                    {{plans.subdescription}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="card bg-contrast-100 rounded-1 border-0">
-                                    <div class="card-body p-4">
-                                        <div class="toggle mb-0">
-                                            <div class="toggle-header d-block">
-                                                <div class="d-flex w-100">
-                                                    <div class="toggle-title fs-4 mb-2">
-                                                        Litora eaque taciti explicabo libero omnis
-                                                    </div>
-                                                </div>
-                                                <div class="small fw-normal mb-2 op-06">Borjan Geshkovski, Cyril
-                                                    Letrouit, Yury Polyanskiy, and Philippe Rigollet (2023)</div>
-                                                <div class="badge bg-danger fs-6 fw-normal mt-2 me-2">Closed</div>
-                                                <small class="fw-normal"><strong> abcdefg:</strong> 123456</small>
-                                                <div class="position-absolute bottom-0 end-0 d-flex align-items-center">
-                                                    <a href="#"
-                                                        class="bi-info-circle fs-5 text-contrast-900 h-text-color"></a>
-                                                    <a href="#" class="bi-link fs-5 text-contrast-900 h-text-color ms-3"
-                                                        style="transform: rotate(45deg);"></a>
-                                                </div>
-                                            </div>
-                                            <div class="toggle-content">
-                                                <div class="mt-4 border-top pt-4">
-                                                    <h4 class="mb-3">Abstract</h4>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-                                                    dolorum, vero ipsum molestiae minima odio quo voluptate illum
-                                                    excepturi quam cum voluptates doloribus quae nisi tempore
-                                                    necessitatibus dolores ducimus enim libero eaque explicabo suscipit
-                                                    animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam,
-                                                    nam unde quas beatae.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="card bg-contrast-100 rounded-1 border-0">
-                                    <div class="card-body p-4">
-                                        <div class="toggle mb-0">
-                                            <div class="toggle-header d-block">
-                                                <div class="d-flex w-100">
-                                                    <div class="toggle-title fs-4 mb-2">
-                                                        Litora eaque taciti explicabo libero omnis
-                                                    </div>
-                                                </div>
-                                                <div class="small fw-normal mb-2 op-06">Borjan Geshkovski, Cyril
-                                                    Letrouit, Yury Polyanskiy, and Philippe Rigollet (2023)</div>
-                                                <div class="badge bg-info fs-6 fw-normal mt-2 me-2">Info</div> <small
-                                                    class="fw-normal"><strong> abcdefg:</strong> 123456</small>
-                                                <div class="position-absolute bottom-0 end-0 d-flex align-items-center">
-                                                    <a href="#"
-                                                        class="bi-info-circle fs-5 text-contrast-900 h-text-color"></a>
-                                                    <a href="#" class="bi-link fs-5 text-contrast-900 h-text-color ms-3"
-                                                        style="transform: rotate(45deg);"></a>
-                                                </div>
-                                            </div>
-                                            <div class="toggle-content">
-                                                <div class="mt-4 border-top pt-4">
-                                                    <h4 class="mb-3">Abstract</h4>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-                                                    dolorum, vero ipsum molestiae minima odio quo voluptate illum
-                                                    excepturi quam cum voluptates doloribus quae nisi tempore
-                                                    necessitatibus dolores ducimus enim libero eaque explicabo suscipit
-                                                    animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam,
-                                                    nam unde quas beatae.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="card bg-contrast-100 rounded-1 border-0">
-                                    <div class="card-body p-4">
-                                        <div class="toggle mb-0">
-                                            <div class="toggle-header d-block">
-                                                <div class="d-flex w-100">
-                                                    <div class="toggle-title fs-4 mb-2">
-                                                        Litora eaque taciti explicabo libero omnis
-                                                    </div>
-                                                </div>
-                                                <div class="small fw-normal mb-2 op-06">Borjan Geshkovski, Cyril
-                                                    Letrouit, Yury Polyanskiy, and Philippe Rigollet (2023)</div>
-                                                <div class="badge bg-warning fs-6 fw-normal mt-2 me-2">Preprint</div>
-                                                <small class="fw-normal"><strong> abcdefg:</strong> 123456</small>
-                                                <div class="position-absolute bottom-0 end-0 d-flex align-items-center">
-                                                    <a href="#"
-                                                        class="bi-info-circle fs-5 text-contrast-900 h-text-color"></a>
-                                                    <a href="#" class="bi-link fs-5 text-contrast-900 h-text-color ms-3"
-                                                        style="transform: rotate(45deg);"></a>
-                                                </div>
-                                            </div>
-                                            <div class="toggle-content">
-                                                <div class="mt-4 border-top pt-4">
-                                                    <h4 class="mb-3">Abstract</h4>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-                                                    dolorum, vero ipsum molestiae minima odio quo voluptate illum
-                                                    excepturi quam cum voluptates doloribus quae nisi tempore
-                                                    necessitatibus dolores ducimus enim libero eaque explicabo suscipit
-                                                    animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam,
-                                                    nam unde quas beatae.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -583,21 +321,13 @@
                                 <p>{{research.subdescription}}</p>
                             </div>
                             <div class="col-md-6">
-                                <h3 class="border-bottom border-color border-width-3 d-inline-block">Interests</h3>
+                                <h3 class="border-bottom border-color border-width-3 d-inline-block">Интересы</h3>
                                 <div class="row g-2">
+                                    {% for interests in interests %}
                                     <div class="col-auto">
-                                        <div class="small rounded-pill border px-4 py-2">Learning</div>
+                                        <div class="small rounded-pill border px-4 py-2">{{interests.your_interests}}</div>
                                     </div>
-                                    <div class="col-auto">
-                                        <div class="small rounded-pill border px-4 py-2">Minimax optimality</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="small rounded-pill border px-4 py-2">Optimal transport</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="small rounded-pill border px-4 py-2">Optimization</div>
-                                    </div>
-                                    <div class="col-auto">
+                                    {% endfor %}
                                         <div class="small rounded-pill border px-4 py-2">Algorithms and complexity</div>
                                     </div>
                                 </div>
@@ -610,104 +340,32 @@
                 <div id="section-blog" class="py-lg-5 page-section">
                     <div class="container mw-md">
                         <h2 class="text-center display-3 fw-semibold ls-2 mb-5 mb-lg-6"><i class="bi-pencil color"></i>
-                            Latest Blogs</h2>
+                            Последние блоги</h2>
                         <div class="row g-5">
+                            {% for latestblogs in latestblogs %}
                             <div class="col-md-6">
                                 <div class="posts-md">
                                     <div class="entry">
                                         <div class="entry-image">
-                                            <a href="#"><img class="rounded-6" src="{% static 'demos/academic/images/blogs/1.jpg' %}"
+                                            <a href="#"><img class="rounded-6" src="{{latestblogs.image.url}}"
                                                     alt="Image 3"></a>
                                         </div>
                                         <div class="entry-title mt-4">
-                                            <h3 class="mb-2 fs-5 fw-normal"><a href="#">How do you get more Researches
-                                                    from Us.</a></h3>
+                                            <h3 class="mb-2 fs-5 fw-normal"><a href="#">{{latestblogs.title}}</a></h3>
                                         </div>
                                         <div class="entry-meta op-07">
                                             <ul>
-                                                <li><a href="#">Pliff Doe</a></li>
-                                                <li><a href="#">11 Mar 2021</a></li>
+                                                <li><a href="#">{{latestblogs.autor}}</a></li>
+                                                <li><a href="#">{{latestblogs.date}}</a></li>
                                             </ul>
                                         </div>
                                         <div class="entry-content">
-                                            <p class="mb-0">Pellentesque hic illo beatae rhoncus sint, quis, fugiat
-                                                imperdiet unde architecto magna dui hymenaeos autem.</p>
+                                            <p class="mb-0">{{latestblogs.description}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="posts-md">
-                                    <div class="entry">
-                                        <div class="entry-image">
-                                            <a href="#"><img class="rounded-6" src="{% static 'demos/academic/images/blogs/2.jpg' %}"
-                                                    alt="Image 3"></a>
-                                        </div>
-                                        <div class="entry-title mt-4">
-                                            <h3 class="mb-2 fs-5 fw-normal"><a href="#">Lessons that nobody else could
-                                                    have more.</a></h3>
-                                        </div>
-                                        <div class="entry-meta op-07">
-                                            <ul>
-                                                <li><a href="#">Mark Jonson</a></li>
-                                                <li><a href="#">11 Mar 2021</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p class="mb-0">Pellentesque hic illo beatae rhoncus sint, quis, fugiat
-                                                imperdiet unde architecto magna dui hymenaeos autem lorem eligendi.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="posts-md">
-                                    <div class="entry">
-                                        <div class="entry-image">
-                                            <a href="#"><img class="rounded-6" src="{% static 'demos/academic/images/blogs/3.jpg' %}"
-                                                    alt="Image 3"></a>
-                                        </div>
-                                        <div class="entry-title mt-4">
-                                            <h3 class="mb-2 fs-5 fw-normal"><a href="#">Know more about online
-                                                    Education.</a></h3>
-                                        </div>
-                                        <div class="entry-meta op-07">
-                                            <ul>
-                                                <li><a href="#">Rabbica Down</a></li>
-                                                <li><a href="#">11 Mar 2021</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p class="mb-0">Pellentesque hic illo beatae unde architecto magna dui
-                                                hymenaeos autem lorem eligendi, quae! Orci commodo, aute reiciendis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="posts-md">
-                                    <div class="entry">
-                                        <div class="entry-image">
-                                            <a href="#"><img class="rounded-6" src="{% static 'demos/academic/images/blogs/4.jpg' %}"
-                                                    alt="Image 3"></a>
-                                        </div>
-                                        <div class="entry-title mt-4">
-                                            <h3 class="mb-2 fs-5 fw-normal"><a href="#">Know more about Vacancies.</a>
-                                            </h3>
-                                        </div>
-                                        <div class="entry-meta op-07">
-                                            <ul>
-                                                <li><a href="#">Rabbica Down</a></li>
-                                                <li><a href="#">11 Mar 2021</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p class="mb-0">Pellentesque hic illo beatae unde architecto magna dui
-                                                hymenaeos autem lorem eligendi, quae! Orci commodo, aute reiciendis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -738,9 +396,9 @@
                                         <h4 class="border-bottom border-color border-width-3 d-inline-block">Подписывайтесь на нас
                                         </h4>
                                         <ul class="list-group list-group-flush social-lists">
-                                            <a href="#" class="list-group-item d-flex pt-0">Whatsapp <i
+                                            <a href="https://wa.me/qr/OQ55EGMQ7OTJD1" class="list-group-item d-flex pt-0">Whatsapp <i
                                                     class="bi-arrow-up-right ms-auto"></i></a>
-                                            <a href="#" class="list-group-item d-flex">Instagram <i
+                                            <a href="https://www.instagram.com/lizaintp/" class="list-group-item d-flex">Instagram <i
                                                     class="bi-arrow-up-right ms-auto"></i></a>
                                             <a href="#" class="list-group-item d-flex">Twitter <i
                                                     class="bi-arrow-up-right ms-auto"></i></a>

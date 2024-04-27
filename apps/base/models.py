@@ -41,8 +41,8 @@ class Portfolio(models.Model):
         return self.bio
     
     class Meta:
-        verbose_name = '1)Портфолио'
-        verbose_name_plural = '1)Портфолии'
+        verbose_name = 'Портфолио'
+        verbose_name_plural = 'Портфолии'
 
 class AcademicPositions(models.Model):
     job = models.CharField(
@@ -58,8 +58,8 @@ class AcademicPositions(models.Model):
         return self.job
 
     class Meta:
-        verbose_name = '2)Академическая должность'
-        verbose_name_plural = '2)Академическии должности'
+        verbose_name = 'Академическая должность'
+        verbose_name_plural = 'Академическии должности'
 
 class EducationTraining(models.Model):
     univercity = models.CharField(
@@ -75,8 +75,8 @@ class EducationTraining(models.Model):
         return self.univercity
 
     class Meta:
-        verbose_name = '3)Образование/Обучение'
-        verbose_name_plural = '3)Образовании/Обучении'
+        verbose_name = 'Образование/Обучение'
+        verbose_name_plural = 'Образовании/Обучении'
 
 class Rewards(models.Model):
     title = models.CharField(
@@ -90,21 +90,13 @@ class Rewards(models.Model):
         verbose_name='Дата'
     )
     class Meta:
-        verbose_name = '4)Прогресс'
-        verbose_name_plural = '4)Прогрессы'
+        verbose_name = 'Прогресс'
+        verbose_name_plural = 'Прогрессы'
 
     def __str__(self):
         return self.title
 
 class Works(models.Model):
-    logo = models.ImageField(
-        upload_to='logo_image/',
-        verbose_name = 'Логотип'
-    )
-    title = models.CharField(
-        max_length=255,
-        verbose_name='Название тайтла'
-    )
     image_of_college = models.ImageField(
         upload_to='job_image/',
         verbose_name = 'Фото колледжа'
@@ -121,22 +113,14 @@ class Works(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.name_of_job
 
     class Meta:
-        verbose_name = '5)Прошлое место работы'
-        verbose_name_plural = '5)Прошлые места работы'
+        verbose_name = 'Прошлое место работы'
+        verbose_name_plural = 'Прошлые места работы'
 
 
 class Experience(models.Model):
-    logo = models.ImageField(
-        upload_to='logo_image/',
-        verbose_name = 'Логотип'
-    )
-    title = models.CharField(
-        max_length=255,
-        verbose_name='Название тайтла'
-    )
     data = models.CharField(
         max_length=255,
         verbose_name='Годы работы'
@@ -146,11 +130,11 @@ class Experience(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.description
     
     class Meta:
-        verbose_name = '6)Опыт работы'
-        verbose_name_plural = '6)Опыты работы' 
+        verbose_name = 'Опыт работы'
+        verbose_name_plural = 'Опыты работы' 
 
 
 class AboutYourself(models.Model):
@@ -161,14 +145,13 @@ class AboutYourself(models.Model):
     subtitle = models.TextField(
         verbose_name='Расскажите более подробно'
     )
-    class Meta:
-        verbose_name = '7)Качество'
-        verbose_name_plural = '7)Качества '
-
     def __str__(self):
         return self.title
+    class Meta:
+        verbose_name = 'Качество'
+        verbose_name_plural = 'Качества '
 
-class Journal(models.Model):
+class Plans(models.Model):
     minetitle = models.CharField(
         max_length=255,
         verbose_name='Главный тайтл'
@@ -188,8 +171,8 @@ class Journal(models.Model):
         return self.minetitle
 
     class Meta:
-        verbose_name = '8)Журнал'
-        verbose_name_plural = '8)Журналы'
+        verbose_name = 'План'
+        verbose_name_plural = 'Планы'
 
 class Research(models.Model):
     minetitle = models.CharField(
@@ -207,8 +190,8 @@ class Research(models.Model):
         return self.minetitle
 
     class Meta:
-        verbose_name = '9)Иследование'
-        verbose_name_plural = '9)Иследования'
+        verbose_name = 'Иследование'
+        verbose_name_plural = 'Иследования'
 
 class Interests(models.Model):
     your_interests = models.CharField(
@@ -220,31 +203,36 @@ class Interests(models.Model):
         return self.your_interests
 
     class Meta:
-        verbose_name = '10)Интерес'
-        verbose_name_plural = '10)Интересы'
+        verbose_name = 'Интерес'
+        verbose_name_plural = 'Интересы'
 
 class LatestBlogs(models.Model):
     title = models.CharField(
         max_length=255,
         verbose_name='Название последних постов'
     )
-    description = models.TextField(
-        verbose_name='Описание'
-    )
-    date = models.DateField(
-        verbose_name='Дата выпуска'
-    )
     image = models.ImageField(
         upload_to='image/',
         verbose_name='Изображение'
     )
+    description = models.TextField(
+        verbose_name='Описание'
+    )
+    autor =  models.CharField(
+        max_length=255,
+        verbose_name='Автор'
+    )
+    date = models.DateField(
+        verbose_name='Дата выпуска'
+    )
+
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = '11)Последний блог'
-        verbose_name_plural = '11)Последние блоги'
+        verbose_name = 'Последний блог'
+        verbose_name_plural = 'Последние блоги'
 
 class Contacts(models.Model):
     name_of_office = models.TextField(
@@ -267,37 +255,5 @@ class Contacts(models.Model):
         return self.name_of_office
 
     class Meta:
-        verbose_name = '12)Контакт'
-        verbose_name_plural = '12)Контакты'
-
-# class Write(models.Model):
-#     name = models.CharField(
-#         max_length=100,
-#         verbose_name='Имя'
-#     )
-#     email = models.EmailField(
-#         verbose_name='Почта'
-#     )
-#     subject = models.CharField(
-#         verbose_name='Объект'
-#     )
-#     message = models.TextField(
-
-#     )
-
-"""   
-                            {% for geeks in testimitions%}
-                            <div class="carousel-item">
-                                <blockquote>
-                                    <img class="rounded-circle img-fluid" src="{{geeks.image.url}}" style = "width:200px" alt="client">
-                                    <p>{{geeks.descriptions}}</p>
-                                   
-                                    <h5>{{geeks.name}}</h5>
-                                </blockquote>
-                            </div>
-                            {% endfor %}"""
-    
-    
-
-    
-    
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
