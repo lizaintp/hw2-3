@@ -136,7 +136,6 @@ class Experience(models.Model):
         verbose_name = 'Опыт работы'
         verbose_name_plural = 'Опыты работы' 
 
-
 class AboutYourself(models.Model):
     title = models.CharField(
         max_length=255,
