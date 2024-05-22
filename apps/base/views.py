@@ -18,4 +18,4 @@ def index(request):
     latestblogs = LatestBlogs.objects.all()
     contacts = Contacts.objects.latest('id')
     
-    return render(request, 'index.html', locals())
+    return render(request, 'index.html', locals()) 
